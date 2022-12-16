@@ -1,0 +1,512 @@
+<div class="slider-area pb-50">
+    <div class="slider-active swiper-container">
+        <div class="swiper-wrapper">
+            {{#each bannerImg}}
+            <div class="swiper-slide">
+                <div class="intro-section slider-height-1 slider-content-center bg-img single-animation-wrap slider-bg-color-3"
+                    style="background-image:url(/image/{{this.image.[0]}}); background-size:cover">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 hm2-slider-animation">
+                                <div class="slider-content-2 slider-animated-3">
+                                    <h3 class="animated" style="color:rgb(201, 192, 181) ;">{{this.des1}}</h3>
+                                    <h1 class="animated" style="color:rgb(201, 192, 181) ;">{{this.des2}}<br
+                                            style="color:rgb(201, 192, 181) ;">Collection</h1>
+                                    <div class="slider-btn-2 btn-hover">
+                                        <a href="/view_products" class="btn hover-border-radius theme-color animated">
+                                            Shop Now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+            <div class="home-slider-prev2 main-slider-nav2"><i class="fa fa-angle-left"></i></div>
+            <div class="home-slider-next2 main-slider-nav2"><i class="fa fa-angle-right"></i></div>
+        </div>
+    </div>
+</div>
+{{!-- <div class="category-area bg-gray-4 pt-95 pb-100">
+    <div class="container">
+        <div class="section-title-2 st-border-center text-center mb-75" data-aos="fade-up" data-aos-delay="200">
+            <h2>Products Category</h2>
+        </div>
+        <div class="category-slider-active-2 swiper-container">
+            <div class="swiper-wrapper">
+
+
+            </div>
+        </div>
+    </div>
+</div> --}}
+<div class="category-area bg-gray-4 pt-95 pb-100">
+    <div class="container">
+        <div class="section-title-2 st-border-center text-center mb-75" data-aos="fade-up" data-aos-delay="200">
+            <h2>Products Category</h2>
+        </div>
+        <div class="category-slider-active-2 swiper-container">
+            <div class="swiper-wrapper">
+                {{#each category}}
+                <div class="swiper-slide">
+                    <div class="single-category-wrap-2 text-center" data-aos="fade-up" data-aos-delay="400">
+                        <div class="category-img-2">
+                            <a href="/view-catgory-products/{{this._id}}">
+                                <img class="category-normal-img" src="/image/{{this.image.[0]}}" alt="">
+                                <img class="category-hover-img" src="/image/{{this.image.[0]}}" alt="icon">
+                            </a>
+                        </div>
+                        <div class="category-content-2 category-content-2-black">
+                            <h4><a href="/view-catgory-products/{{this._id}}">{{this.category}}</a></h4>
+                        </div>
+                    </div>
+
+
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+     <div class="service-area pt-95 pb-65">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                        <div class="service-wrap-2 text-center mb-30" data-aos="fade-up" data-aos-delay="200">
+                            <div class="service-img-2">
+                                <img src="assets/images/icon-img/car.png" alt="">
+                            </div>
+                            <div class="service-content-2">
+                                <h3>Free Shipping</h3>
+                                <p>customers do not have to pay an additional shipping charge..</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                        <div class="service-wrap-2 text-center mb-30" data-aos="fade-up" data-aos-delay="400">
+                            <div class="service-img-2">
+                                <img src="assets/images/icon-img/time.png" alt="">
+                            </div>
+                            <div class="service-content-2">
+                                <h3>Support 24/7</h3>
+                                <p>customers can get help and find answers to questions as soon as they come up</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                        <div class="service-wrap-2 text-center mb-30" data-aos="fade-up" data-aos-delay="600">
+                            <div class="service-img-2">
+                                <img src="assets/images/icon-img/dollar.png" alt="">
+                            </div>
+                            <div class="service-content-2">
+                                <h3>Money Return</h3>
+                                <p>To refund is to give money back, especially when someone isn't satisfied </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                        <div class="service-wrap-2 text-center mb-30" data-aos="fade-up" data-aos-delay="800">
+                            <div class="service-img-2">
+                                <img src="assets/images/icon-img/discount.png" alt="">
+                            </div>
+                            <div class="service-content-2">
+                                <h3>Order Discount</h3>
+                                <p>these discounts apply to the sum of prices of product items</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{#if user}}
+    <div class="product-area pt-95 pb-60">
+        <div class="container">
+            <div class="section-title-tab-wrap mb-75" data-aos="fade-up" data-aos-delay="200">
+                <div class="section-title-2">
+                    <h2>Hot Products</h2>
+                </div>
+                <div class="tab-style-1 nav">
+                    <a class="active" href="#pro-1" data-bs-toggle="tab">New Arrivals </a>
+
+                </div>
+            </div>
+            <div class="tab-content jump">
+                <div id="pro-1" class="tab-pane active">
+                    <div class="row">
+                        {{#each hotProd}}
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                            <div class="product-wrap mb-35" data-aos="fade-up" data-aos-delay="200">
+                                <div class="product-img img-zoom mb-25">
+                                    <a href="/view_single/{{this._id}}">
+                                        <img src="/image/{{this.image.[0]}}" alt="">
+                                    </a>
+                                    <div class="product-badge badge-top badge-right badge-pink">
+                                        <span>{{this.offper}}%</span>
+                                    </div>
+                                    <div class="product-action-wrap">
+                                          <button class="product-action-btn-1"
+                                                            onclick="deleteToWishList('{{this._id}}')" title="Wishlist"
+                                                            id="a{{this._id}}" hidden>
+                                                            <i class="pe-7s-like"></i></button>
+                                                        <button class="product-action-btn-1"
+                                                            onclick="addToWishList('{{this._id}}')" title="Wishlist"
+                                                            id="{{this._id}}">
+                                                            <i class="pe-7s-like"></i></button>
+                                      
+                                    </div>
+                                    <div class="product-action-2-wrap">
+                                        <button class="product-action-btn-2" onclick="addToCart('{{this._id}}')"
+                                            title="Add To Cart"><i class="pe-7s-cart"></i> Add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3><a href="product-details.html">{{this.productname}}</a></h3>
+                                    <div class="product-price">
+                                        <span class="old-price">Rs {{this.ogAmount}} </span>
+                                        <span class="new-price">Rs {{this.price}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+
+                    </div>
+                </div>
+                {{!-- <div id="pro-2" class="tab-pane">
+                    <div class="row">
+
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                            <div class="product-wrap mb-35">
+                                <div class="product-img img-zoom mb-25">
+                                    <a href="product-details.html">
+                                        <img src="assets/images/product/product-1.png" alt="">
+                                    </a>
+                                    <div class="product-action-wrap">
+                                        <button class="product-action-btn-1" title="Wishlist"><i
+                                                class="pe-7s-like"></i></button>
+                                        <button class="product-action-btn-1" title="Quick View" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal">
+                                            <i class="pe-7s-look"></i>
+                                        </button>
+                                    </div>
+                                    <div class="product-action-2-wrap">
+                                        <button class="product-action-btn-2" title="Add To Cart"><i
+                                                class="pe-7s-cart"></i> Add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3><a href="product-details.html">New Modern Sofa Set</a></h3>
+                                    <div class="product-price">
+                                        <span>$30.25 </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="pro-3" class="tab-pane">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                            <div class="product-wrap mb-35">
+                                <div class="product-img img-zoom mb-25">
+                                    <a href="product-details.html">
+                                        <img src="assets/images/product/product-4.png" alt="">
+                                    </a>
+                                    <div class="product-badge badge-top badge-right badge-pink">
+                                        <span>-10%</span>
+                                    </div>
+                                    <div class="product-action-wrap">
+                                        <button class="product-action-btn-1" title="Wishlist"><i
+                                                class="pe-7s-like"></i></button>
+                                        <button class="product-action-btn-1" title="Quick View" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal">
+                                            <i class="pe-7s-look"></i>
+                                        </button>
+                                    </div>
+                                    <div class="product-action-2-wrap">
+                                        <button class="product-action-btn-2" title="Add To Cart"><i
+                                                class="pe-7s-cart"></i> Add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3><a href="product-details.html">Stylish Swing Chair</a></h3>
+                                    <div class="product-price">
+                                        <span class="old-price">$25.89 </span>
+                                        <span class="new-price">$20.25 </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div> --}}
+            </div>
+        </div>
+    </div>
+    {{else}}
+    
+    <div class="product-area  pb-60">
+        <div class="container">
+            <div class="section-title-tab-wrap mb-75" data-aos="fade-up" data-aos-delay="200">
+                <div class="section-title-2">
+                    <h2>Hot Products</h2>
+                </div>
+                <div class="tab-style-1 nav">
+                    {{!-- <a class="active" href="#pro-1" data-bs-toggle="tab">New Arrivals </a>
+                    <a href="#pro-2" data-bs-toggle="tab" class=""> Best Sellers </a> --}}
+                    <a href="#pro-3" data-bs-toggle="tab" class=""> Sale Items </a>
+                </div>
+            </div>
+            <div class="tab-content jump">
+                <div id="pro-1" class="tab-pane active">
+                    <div class="row">
+                        {{#each hotProd}}
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                            <div class="product-wrap mb-35" data-aos="fade-up" data-aos-delay="200">
+                                <div class="product-img img-zoom mb-25">
+                                    <a href="/user_signin">
+                                        <img src="/image/{{this.image.[0]}}" alt="">
+                                    </a>
+                                    <div class="product-badge badge-top badge-right badge-pink">
+                                        <span>{{this.offper}}%</span>
+                                    </div>
+                                    <div class="product-action-wrap">
+                                        <a class="product-action-btn-1"
+                                               href="/user_signin" title="Wishlist"><i class="pe-7s-like"></i></a>
+                                                                
+                                    </div>
+                                    <div class="product-action-2-wrap">
+                                        <a class="product-action-btn-2 " title="Add To Cart"><i class="pe-7s-cart"
+                                                href="/user_signin"></i> Add to cart</a>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3><a href="product-details.html">{{this.productname}}</a></h3>
+                                    <div class="product-price">
+                                        <span class="old-price">Rs {{this.ogAmount}} </span>
+                                        <span class="new-price">Rs {{this.price}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+
+                    </div>
+                </div>
+                {{!-- <div id="pro-2" class="tab-pane">
+                    <div class="row">
+
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                            <div class="product-wrap mb-35">
+                                <div class="product-img img-zoom mb-25">
+                                    <a href="product-details.html">
+                                        <img src="assets/images/product/product-1.png" alt="">
+                                    </a>
+                                    <div class="product-action-wrap">
+                                        <button class="product-action-btn-1" title="Wishlist"><i
+                                                class="pe-7s-like"></i></button>
+                                        <button class="product-action-btn-1" title="Quick View" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal">
+                                            <i class="pe-7s-look"></i>
+                                        </button>
+                                    </div>
+                                    <div class="product-action-2-wrap">
+                                        <button class="product-action-btn-2" title="Add To Cart"><i
+                                                class="pe-7s-cart"></i> Add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3><a href="product-details.html">New Modern Sofa Set</a></h3>
+                                    <div class="product-price">
+                                        <span>$30.25 </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="pro-3" class="tab-pane">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                            <div class="product-wrap mb-35">
+                                <div class="product-img img-zoom mb-25">
+                                    <a href="product-details.html">
+                                        <img src="assets/images/product/product-4.png" alt="">
+                                    </a>
+                                    <div class="product-badge badge-top badge-right badge-pink">
+                                        <span>-10%</span>
+                                    </div>
+                                    <div class="product-action-wrap">
+                                        <button class="product-action-btn-1" title="Wishlist"><i
+                                                class="pe-7s-like"></i></button>
+                                        <button class="product-action-btn-1" title="Quick View" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal">
+                                            <i class="pe-7s-look"></i>
+                                        </button>
+                                    </div>
+                                    <div class="product-action-2-wrap">
+                                        <button class="product-action-btn-2" title="Add To Cart"><i
+                                                class="pe-7s-cart"></i> Add to cart</button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3><a href="product-details.html">Stylish Swing Chair</a></h3>
+                                    <div class="product-price">
+                                        <span class="old-price">$25.89 </span>
+                                        <span class="new-price">$20.25 </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div> --}}
+            </div>
+        </div>
+    </div>
+
+    {{/if}}
+
+    <!-- Product Modal end -->
+    <!-- Mobile Menu start -->
+    {{>user-footer}}
+    <!-- Product Modal start -->
+    {{!-- <div class="modal fade quickview-modal-style" id="exampleModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-bs-dismiss="modal" aria-label="Close"><i class=" ti-close "></i></a>
+                </div>
+                <div class="modal-body">
+                    <div class="row gx-0">
+                        <div class="col-lg-5 col-md-5 col-12">
+                            <div class="modal-img-wrap">
+                                <img src="assets/images/product/quickview.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-md-7 col-12">
+                            <div class="product-details-content quickview-content">
+                                <h2>New Modern Chair</h2>
+                                <div class="product-details-price">
+                                    <span class="old-price">$25.89 </span>
+                                    <span class="new-price">$20.25</span>
+                                </div>
+                                <div class="product-details-review">
+                                    <div class="product-rating">
+                                        <i class=" ti-star"></i>
+                                        <i class=" ti-star"></i>
+                                        <i class=" ti-star"></i>
+                                        <i class=" ti-star"></i>
+                                        <i class=" ti-star"></i>
+                                    </div>
+                                    <span>( 1 Customer Review )</span>
+                                </div>
+                                <div class="product-color product-color-active product-details-color">
+                                    <span>Color :</span>
+                                    <ul>
+                                        <li><a title="Pink" class="pink" href="#">pink</a></li>
+                                        <li><a title="Yellow" class="active yellow" href="#">yellow</a></li>
+                                        <li><a title="Purple" class="purple" href="#">purple</a></li>
+                                    </ul>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ornare tincidunt
+                                    neque vel semper. Cras placerat enim sed nisl mattis eleifend.</p>
+                                <div class="product-details-action-wrap">
+                                    <div class="product-quality">
+                                        <input class="cart-plus-minus-box input-text qty text" name="qtybutton"
+                                            value="1">
+                                    </div>
+                                    <div class="single-product-cart btn-hover">
+                                        <a href="#">Add to cart</a>
+                                    </div>
+                                    <div class="single-product-wishlist">
+                                        <a title="Wishlist" href="#"><i class="pe-7s-like"></i></a>
+                                    </div>
+                                    <div class="single-product-compare">
+                                        <a title="Compare" href="#"><i class="pe-7s-shuffle"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+    <!-- Product Modal end -->
+    <!-- Mobile Menu start -->
+    <div class="off-canvas-active">
+        <a class="off-canvas-close"><i class=" ti-close "></i></a>
+        <div class="off-canvas-wrap">
+            <div class="welcome-text off-canvas-margin-padding">
+
+                <p>{{user.firstname}} </p>
+            </div>
+            <div class="mobile-menu-wrap off-canvas-margin-padding-2">
+                <div id="mobile-menu" class="slinky-mobile-menu text-left">
+
+                    <ul>
+                        <li><a href="/">HOME</a></li>
+                        <li><a href="/view_products">PRODUCTS</a></li>
+                        {{!-- <li><a href="about-us.html">ABOUT</a></li> --}}
+                        <li><a href="/contact-us">CONTACT US</a></li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="language-currency-wrap language-currency-wrap-modify">
+                <div class="currency-wrap border-style">
+                    <a class="currency-active" href="#">$ Dollar (US) <i class=" ti-angle-down "></i></a>
+                    <div class="currency-dropdown">
+                        <ul>
+                            <li><a href="#">Taka (BDT) </a></li>
+                            <li><a href="#">Riyal (SAR) </a></li>
+                            <li><a href="#">Rupee (INR) </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="language-wrap">
+                    <a class="language-active" href="#"><img src="assets/images/icon-img/flag.png" alt=""> English <i
+                            class=" ti-angle-down "></i></a>
+                    <div class="language-dropdown">
+                        <ul>
+                            <li><a href="#"><img src="assets/images/icon-img/flag.png" alt="">English </a></li>
+                            <li><a href="#"><img src="assets/images/icon-img/spanish.png" alt="">Spanish</a></li>
+                            <li><a href="#"><img src="assets/images/icon-img/arabic.png" alt="">Arabic </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- All JS is here -->
+<script src="assets/js/vendor/modernizr-3.11.7.min.js"></script>
+<script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+<script src="assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
+<script src="assets/js/vendor/popper.min.js"></script>
+<script src="assets/js/vendor/bootstrap.min.js"></script>
+<script src="assets/js/plugins/wow.js"></script>
+<script src="assets/js/plugins/scrollup.js"></script>
+<script src="assets/js/plugins/aos.js"></script>
+<script src="assets/js/plugins/magnific-popup.js"></script>
+<script src="assets/js/plugins/jquery.syotimer.min.js"></script>
+<script src="assets/js/plugins/swiper.min.js"></script>
+<script src="assets/js/plugins/imagesloaded.pkgd.min.js"></script>
+<script src="assets/js/plugins/isotope.pkgd.min.js"></script>
+<script src="assets/js/plugins/jquery-ui.js"></script>
+<script src="assets/js/plugins/jquery-ui-touch-punch.js"></script>
+<script src="assets/js/plugins/jquery.nice-select.min.js"></script>
+<script src="assets/js/plugins/waypoints.min.js"></script>
+<script src="assets/js/plugins/counterup.min.js"></script>
+<script src="assets/js/plugins/select2.min.js"></script>
+<script src="assets/js/plugins/easyzoom.js"></script>
+<script src="assets/js/plugins/slinky.min.js"></script>
+<script src="assets/js/plugins/ajax-mail.js"></script>
+<!-- Main JS -->
+<script src="assets/js/main.js"></script>
+<script src="/js/cart.js"></script>
+</body>
+
+</html>

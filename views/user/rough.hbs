@@ -1,0 +1,187 @@
+ {{else}}
+                                <div id="shop-1" class="tab-pane active">
+                                    <div class="row">
+                                        {{#each data}}
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                            <div class="product-wrap mb-35">
+                                                <div class="product-img img-zoom mb-25">
+                                                    <a href="/view_single/{{this._id}}">
+                                                        <img src="/image/{{this.image.[0]}}" alt="">
+                                                    </a>
+                                                    <div class="product-badge badge-top badge-right badge-pink">
+                                                        <span>{{this.offper}} %</span>
+                                                    </div>
+
+                                                    <div class="product-action-wrap">
+                                                        <button class="product-action-btn-1">
+                                                           
+                                                            <i class="pe-7s-like"></i></button>
+                                                        
+                                                        </button>
+                                                    </div>
+                                                    <div class="product-action-2-wrap">
+                                                        <button class="product-action-btn-2"
+                                                             title="Add To Cart"><i
+                                                                class="pe-7s-cart"></i> Add to cart</button>
+                                                    </div>
+                                                </div>
+                                                <div class="product-content">
+                                                    <h3><a href="/view_single/{{this._id}}">{{this.productname}}</a>
+                                                    </h3>
+                                                    <div class="product-price">
+
+                                                        <span class="new-price">Rs {{this.price}} </span>
+                                                        <span class="old-price">{{this.ogAmount}} </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{/each}}
+
+                                    </div>
+                                    <div class="pagination-style-1">
+                                        <ul>
+                                            {{#each p }}
+                                            {{!-- <li><a class="active" onclick="changePage(event ,'{{this}}' , 4)"
+                                                    href="">{{this}}</a></li> --}}
+                                            <li><a class="active" href="/view_product?page={{this}}&&li=6">{{this}}</a>
+                                            </li>
+
+                                            {{/each}}
+
+                                            <li><a class="next" href="#"><i class=" ti-angle-double-right "></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                {{/if}}
+                                {{#if user}}
+                                <div id="shop-2" class="tab-pane">
+                                    {{#each data}}
+
+                                    <div class="shop-list-wrap mb-30" data-aos="fade-up" data-aos-delay="200">
+                                        <div class="row">
+
+                                            <div class="col-lg-4 col-sm-5">
+                                                <div class="product-list-img">
+                                                    <a href="/view_single/{{this._id}}">
+                                                        <img src="/image/{{this.image.[0]}}" alt="">
+                                                    </a>
+                                                    <div class="product-list-badge badge-right badge-pink">
+                                                        <span style="color: white ;">{{this.offper}} %</span>
+                                                    </div>
+                                                    {{!-- <div class="product-list-quickview">
+                                                        <button class="product-action-btn-2" title="Quick View"
+                                                            data-bs-toggle="modal" onclick="prodModal('{{this._id}}')"
+                                                            data-bs-target="#exampleModal">
+                                                            <i class="pe-7s-look"></i>
+                                                        </button>
+                                                    </div> --}}
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8 col-sm-7">
+                                                <div class="shop-list-content">
+                                                    <h3><a href="/view_single/{{this._id}}">{{this.productname}}</a>
+                                                    </h3>
+                                                    {{!-- <h3>{{this.category}}</h3> --}}
+                                                    <div class="product-price">
+
+                                                        <span class="new-price">Rs {{this.price}} </span>
+                                                        <span class="old-price">{{this.ogAmount}} </span>
+                                                    </div>
+                                                    <div class="product-list-rating">
+                                                        <i class=" ti-star"></i>
+                                                        <i class=" ti-star"></i>
+                                                        <i class=" ti-star"></i>
+                                                        <i class=" ti-star"></i>
+                                                        <i class=" ti-star"></i>
+                                                    </div>
+                                                    <p>{{this.descripiton}}</p>
+
+                                                    <div class="product-list-action">
+                                                        <button class="product-action-btn-3"
+                                                            onclick="addToCart('{{this._id}}')" title="Add to cart"><i
+                                                                class="pe-7s-cart"></i></button>
+                                                        <button class="product-action-btn-3"
+                                                            onclick="addToWishList('{{this._id}}')" title="Wishlist"
+                                                            id="{{this._id}}"><i class="pe-7s-like"></i></button>
+                                                        <button class="product-action-btn-3"
+                                                            onclick="deleteToWishList('{{this._id}}')" title="Wishlist"
+                                                            id="a{{this._id}}" hidden><i class="pe-7s-like"
+                                                                style="color: red;"></i></button>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    {{/each}}
+                                </div>
+                                {{else}}
+                                 <div id="shop-2" class="tab-pane">
+                                    {{#each data}}
+
+                                    <div class="shop-list-wrap mb-30" data-aos="fade-up" data-aos-delay="200">
+                                        <div class="row">
+
+                                            <div class="col-lg-4 col-sm-5">
+                                                <div class="product-list-img">
+                                                    <a href="/view_single/{{this._id}}">
+                                                        <img src="/image/{{this.image.[0]}}" alt="">
+                                                    </a>
+                                                    <div class="product-list-badge badge-right badge-pink">
+                                                        <span style="color: white ;">{{this.offper}} %</span>
+                                                    </div>
+                                                    {{!-- <div class="product-list-quickview">
+                                                        <button class="product-action-btn-2" title="Quick View"
+                                                            data-bs-toggle="modal" onclick="prodModal('{{this._id}}')"
+                                                            data-bs-target="#exampleModal">
+                                                            <i class="pe-7s-look"></i>
+                                                        </button>
+                                                    </div> --}}
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8 col-sm-7">
+                                                <div class="shop-list-content">
+                                                    <h3><a href="/view_single/{{this._id}}">{{this.productname}}</a>
+                                                    </h3>
+                                                    {{!-- <h3>{{this.category}}</h3> --}}
+                                                    <div class="product-price">
+
+                                                        <span class="new-price">Rs {{this.price}} </span>
+                                                        <span class="old-price">{{this.ogAmount}} </span>
+                                                    </div>
+                                                    <div class="product-list-rating">
+                                                        <i class=" ti-star"></i>
+                                                        <i class=" ti-star"></i>
+                                                        <i class=" ti-star"></i>
+                                                        <i class=" ti-star"></i>
+                                                        <i class=" ti-star"></i>
+                                                    </div>
+                                                    <p>{{this.descripiton}}</p>
+
+                                                    <div class="product-list-action">
+                                                        <button class="product-action-btn-3"
+                                                            onclick="addToCart('{{this._id}}')" title="Add to cart"><i
+                                                                class="pe-7s-cart"></i></button>
+                                                        <button class="product-action-btn-3"
+                                                            onclick="addToWishList('{{this._id}}')" title="Wishlist"
+                                                            id="{{this._id}}"><i class="pe-7s-like"></i></button>
+                                                        <button class="product-action-btn-3"
+                                                            onclick="deleteToWishList('{{this._id}}')" title="Wishlist"
+                                                            id="a{{this._id}}" hidden><i class="pe-7s-like"
+                                                                style="color: red;"></i></button>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    {{/each}}
+                                </div>

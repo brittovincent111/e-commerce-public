@@ -1,0 +1,177 @@
+<!-- partial -->
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-title"> Add Category Offer</h3>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Form</a></li>
+                    {{!-- <li class="breadcrumb-item active" aria-current="page">Form elements</li> --}}
+                </ol>
+            </nav>
+        </div>
+        <div class="row">
+
+            <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        {{!-- <h4 class="card-title">Add Category Offer</h4> --}}
+                        {{!-- <p class="card-description"> Form </p> --}}
+                        <form class="form-horizontal" method="post" action="/admin/add-categoryoffer"
+                          >
+                            <div class="card-body">
+                                <h4 class="card-title">Category Offer</h4>
+                                
+                                <div class="form-group row">
+                                    <label for="lname" name="productname"
+                                        class="col-sm-3 text-end control-label col-form-label">Offer Name
+                                    </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="categoryoffername" class="form-control" id="lname"
+                                            placeholder="Product Name"  required/>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="lname" name=""
+                                        class="col-sm-3 text-end control-label col-form-label">Offer Percentage
+                                    </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="categoryofferper" class="form-control" id="lname"
+                                            placeholder="Offer  Percentage" required/>
+                                    </div>
+                                </div>
+                                {{!-- <div class="form-group row">
+                                      <label for="lname" name=""
+                                        class="col-sm-3 text-end control-label col-form-label">Starting Date
+                                    </label>
+                                    <div class="col-sm-9">
+                                        <input type="date" name="productstartdate" class="form-control" id="lname"
+                                              required/>
+                                    </div>
+                                    
+                                </div>
+                                    <div class="form-group row">
+                                      <label for="lname" name=""
+                                        class="col-sm-3 text-end control-label col-form-label">End Date
+                                    </label>
+                                    <div class="col-sm-9">
+                                        <input type="date" name="productenddate" class="form-control" id="lname"
+                                              />
+                                    </div>
+                                    
+                                </div> --}}
+                                
+                               
+                                <div class="form-group row">
+                                    <label class="col-md-3 mt-3 text-end control-label col-form-label"
+                                        name="category">Products</label>
+                                    <div class="col-md-9">
+                                        <select class="select2 form-select shadow-none" name="category"
+                                            style="width: 100%; height: 36px" required>
+
+
+                                           
+                                            </option>
+                                            {{#each data}}
+                                            <option value="{{this._id}}" name="category">{{this.category}}</option>
+
+                                            {{/each}}
+
+
+
+
+                                        </select>
+                                    </div>
+                                </div>
+
+
+{{!-- 
+                                <div class="form-group row">
+                                    <label class="col-md-3 text-end control-label col-form-label" id="image"
+                                        name="image">File Upload</label>
+                                    <div class="col-md-9">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" name="image" id="image"
+                                                required multiple />
+
+                                            <div class="invalid-feedback">
+                                                Example invalid custom file feedback
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="imageimage"  style="padding-left: 250px; padding-bottom:20px">
+                                 <img src="/image/{{product.image.[0]}}" style="height: 80px" alt="">
+                                <img src="/image/{{product.image.[1]}}" style="height: 80px" alt="">
+                                <img src="/image/{{product.image.[2]}}" style="height: 80px" alt="">
+
+
+                                </div> --}}
+                                
+                               
+
+                                <div class="form-group row">
+                                    <label for="cono1"
+                                        class="col-sm-3 text-end control-label col-form-label">Description</label>
+                                    <div class="col-sm-9">
+                                        <textarea class="form-control" name="offerdesc"
+                                        required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-top">
+                                <div class="card-body">
+                                    <button type="submit" class="btn btn-primary">
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                      
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- content-wrapper ends -->
+    <!-- partial:../../partials/_footer.html -->
+    <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com
+                2020</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a
+                    href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin
+                    templates</a> from Bootstrapdash.com</span>
+        </div>
+    </footer>
+    <!-- partial -->
+</div>
+<!-- main-panel ends -->
+</div>
+<!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+<!-- plugins:js -->
+<script src="/vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<script src="/vendors/select2/select2.min.js"></script>
+<script src="/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="/js/off-canvas.js"></script>
+<script src="/js/hoverable-collapse.js"></script>
+<script src="/js/misc.js"></script>
+<script src="/js/settings.js"></script>
+<script src="/js/todolist.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page -->
+<script src="/js/file-upload.js"></script>
+<script src="/js/typeahead.js"></script>
+<script src="/js/select2.js"></script>
+<!-- End custom js for this page -->
+ <script src="/js/crop.js"></script>
+</body>
+
+</html>

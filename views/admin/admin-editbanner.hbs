@@ -1,0 +1,133 @@
+<!-- partial -->
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-title"> Edit Banner </h3>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    {{!-- <li class="breadcrumb-item"><a href="#">Forms</a></li> --}}
+                    {{!-- <li class="breadcrumb-item active" aria-current="page">Form elements</li> --}}
+                </ol>
+            </nav>
+        </div>
+        <div class="row">
+
+            <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        {{!-- <h4 class="card-title">Basic form elements</h4> --}}
+                        {{!-- <p class="card-description"> Basic form elements </p> --}}
+                        <form class="form-horizontal" method="post" action="/admin/edit_banner/{{bannerData._id}}"
+                            enctype="multipart/form-data">
+                            <div class="card-body">
+                                <h4 class="card-title">Edit Banner</h4>
+                       
+                                <div class="form-group row">
+                                    <label for="lname" name="bannername"
+                                        class="col-sm-3 text-end control-label col-form-label">Product Name
+                                    </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="bannername" class="form-control" id="lname"
+                                            placeholder="Product Name" value="{{bannerData.bannername}}" required/>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <label>File upload</label>
+                                    <input type="file" name="image" class="file-upload-default" value="{{bannerData.image.[0]}}" onchange="viewImage(event)">
+                                    <div class="input-group col-md-9 col-xs-12" style="padding-left:230px;">
+                                        <input type="text" class="form-control file-upload-info" disabled
+                                            onchange="viewImage(event)" placeholder="Upload Image" value="{{bannerData.image.[0]}}">
+                                        <span class="input-group-append">
+                                            <button class="file-upload-browse btn btn-primary"
+                                                type="button">Upload</button>
+                                        </span>
+                                    </div>
+
+                                </div>
+                                <div class="bannerimage"
+                                    style="display: flex; width:200px; height:200px; justify-content:center; padding-left:550px;">
+                                    <img src="/image/{{bannerData.image.[0]}}" alt="">
+
+                                </div>
+                                <div class="form-group row" style="padding-top: 10px;">
+                                    <label for="lname" name="bannername"
+                                        class="col-sm-3 text-end control-label col-form-label">Description 2
+                                    </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="des1" class="form-control" id="lname"
+                                            placeholder="Descripition" value="{{bannerData.des1}}" required/>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group row ">
+                                    <label for="lname" name="bannername"
+                                        class="col-sm-3 text-end control-label col-form-label">Description 2
+                                    </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="des2" class="form-control" id="lname"
+                                            placeholder="Descripition" value="{{bannerData.des2}}" required/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-top">
+                                <div class="card-body">
+                                    <button type="submit" class="btn btn-primary">
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- content-wrapper ends -->
+    <!-- partial:../../partials/_footer.html -->
+    <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com
+                2020</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a
+                    href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin
+                    templates</a> from Bootstrapdash.com</span>
+        </div>
+    </footer>
+    <!-- partial -->
+</div>
+<!-- main-panel ends -->
+</div>
+<!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+<!-- plugins:js -->
+<script src="/vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<script src="/vendors/select2/select2.min.js"></script>
+<script src="/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="/js/off-canvas.js"></script>
+<script src="/js/hoverable-collapse.js"></script>
+<script src="/js/misc.js"></script>
+<script src="/js/settings.js"></script>
+<script src="/js/todolist.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page -->
+<script src="/js/file-upload.js"></script>
+<script src="/js/typeahead.js"></script>
+<script src="/js/select2.js"></script>
+<!-- End custom js for this page -->
+<script src="/js/crop.js"></script>
+</body>
+
+</html>

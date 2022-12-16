@@ -1,0 +1,151 @@
+<div class="container">
+    <article class="card">
+        <header class="card-header"> My Orders / Tracking </header>
+
+        <div class="card-body">
+            <h6>Order ID: {{orderList._id}}</h6>
+            <article class="card">
+                <div class="card-body row">
+                    <div class="col"> <strong>Order date </strong> <br>{{orderList.date}}</div>
+                    <div class="col"> <strong>Address </strong> <br> {{orderList.deliveryDetails.add1}},
+                        <br>{{orderList.deliveryDetails.add2}} <br>{{orderList.deliveryDetails.city}}
+                        <br>{{orderList.deliveryDetails.states}} <br>{{orderList.deliveryDetails.country}}
+                    </div>
+                    <div class="col"> <strong style="font-size:small;">Status:</strong> <br>{{orderList.status}}</div>
+                    <div class="col"> <strong style="font-size:small; ">Total Amount</strong><span
+                            style="padding-left: 70px;">{{orderList.ogAmount}}</span> <br>
+                        <strong style="font-size:small; ">coupon Discount</strong> <span
+                            style="padding-left: 50px;">{{orderList.couponDis}} </span> <br>
+                        <div class="col"> <strong style="font-size:large;">Total Amount</strong> <span
+                                style="padding-left: 25px;">{{orderList.totalAmount}} </span><br>
+
+
+
+                        </div>
+                    </div>
+            </article>
+            {{!-- <div class="track">
+                <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span
+                        class="text">Order confirmed</span> </div>
+                <div class="step active"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">
+                        Picked by courier</span> </div>
+                <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the
+                        way </span> </div>
+                <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Ready for
+                        pickup</span> </div>
+            </div> --}}
+            <hr>
+            {{#each orders}}
+            <ul class="row" >
+                <li class="col-md-12" style="display: flex; justify-content: space-between;">
+                    <figure class="itemside mb-6 ">
+                        <div class="aside "><img src="/image/{{this.product.image.[0]}}" class="img-sm border"></div>
+                        <figcaption class="info align-self-center">
+                            <p class="title" id="c" hidden>{{this.product._id}}</p>
+                            <h5 class="title">{{this.product.productname}}</h5>
+                            <p>MRP : {{this.product.ogAmount}}</p>
+                            <p>Quantity : <span id="quan{{this.product._id}}">{{this.quantity}}</span></p>
+                        </figcaption>
+
+                    </figure>
+                    <figure class="itemside mb-6 ">
+                        <figcaption class="info align-self-center">
+                            <p class="title">
+                            <p>
+                            <p>Product Discount: {{this.product.offper}} %</p>
+                            <p>Discount Amount : <span id="disAmo{{this.product._id}}">{{this.product.price}}</span>
+                            </p>
+                        </figcaption>
+
+                      
+
+                    </figure>
+                    {{!-- <figure class="itemside mb-3 ">
+                        <figcaption class="info align-self-center">
+                            <h5 class="title"  id="a{{this.product._id}}">
+                                <h5>
+
+                        </figcaption>
+
+
+ <div id="{{this.product.id}}" value="{{this.product._id}}" onload="sum()"  hidden></div>
+
+                    </figure> --}}
+                </li>
+
+            </ul>
+            {{/each}}
+            <hr>
+            {{#if_eq orderList.status "Delivered"}}
+            <a href="/return_order/{{orderList._id}}" class="btn btn-warning" data-abc="true"
+                style="color: rgb(0, 0, 0); background-color:rgb(255, 102, 0)">Return Product</a>
+            {{else}}
+            {{#if_eq orderList.status "returned"}}
+            <a href="/cancel_order/{{orderList._id}}" class="btn btn-warning" data-abc="true"
+                style="color: rgb(0, 0, 0); background-color:rgb(255, 102, 0)"> Returned</a>
+            {{else}}
+
+            {{#if_eq orderList.status "placed"}}
+            <a href="/cancel_order/{{orderList._id}}" class="btn btn-warning" data-abc="true"
+                style="color: rgb(0, 0, 0); background-color:rgb(255, 102, 0)"> Cancel Order</a>
+            {{else}}
+            <a class="btn btn-warning" data-abc="true" style="color: rgb(0, 0, 0); background-color:rgb(255, 0, 0)">
+                Cancelled </a>
+            {{/if_eq}}
+            {{/if_eq}}
+            {{/if_eq}}
+        </div>
+
+    </article>
+
+</div>
+
+<script>
+let c =document.getElementById("c").innerHTML
+
+
+
+     window.onload =  function sum() {
+console.log(c)
+       
+         let a =document.getElementById("disAmo"+c).innerHTML
+          let b =document.getElementById("quan"+c).innerHTML
+
+        console.log(a,b,"hiiii")
+
+        let total = parseInt(a) * parseInt(b)
+        console.log(total)
+
+        document.getElementById("a" + c).innerHTML = total
+
+    }
+</script>
+
+<script src="/assets/js/vendor/modernizr-3.11.7.min.js"></script>
+<script src="/assets/js/vendor/jquery-3.6.0.min.js"></script>
+<script src="/assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
+<script src="/assets/js/vendor/popper.min.js"></script>
+<script src="/assets/js/vendor/bootstrap.min.js"></script>
+<script src="/assets/js/plugins/wow.js"></script>
+<script src="/assets/js/plugins/scrollup.js"></script>
+<script src="/assets/js/plugins/aos.js"></script>
+<script src="/assets/js/plugins/magnific-popup.js"></script>
+<script src="/assets/js/plugins/jquery.syotimer.min.js"></script>
+<script src="/assets/js/plugins/swiper.min.js"></script>
+<script src="/assets/js/plugins/imagesloaded.pkgd.min.js"></script>
+<script src="/assets/js/plugins/isotope.pkgd.min.js"></script>
+<script src="/assets/js/plugins/jquery-ui.js"></script>
+<script src="/assets/js/plugins/jquery-ui-touch-punch.js"></script>
+<script src="/assets/js/plugins/jquery.nice-select.min.js"></script>
+<script src="/assets/js/plugins/waypoints.min.js"></script>
+<script src="/assets/js/plugins/counterup.min.js"></script>
+<script src="/assets/js/plugins/select2.min.js"></script>
+<script src="/assets/js/plugins/easyzoom.js"></script>
+<script src="/assets/js/plugins/slinky.min.js"></script>
+<script src="/assets/js/plugins/ajax-mail.js"></script>
+<script src="js/validation.js"></script>
+<!-- Main JS -->
+<script src="/assets/js/main.js"></script>
+</body>
+
+</html>

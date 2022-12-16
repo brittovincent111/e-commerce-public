@@ -1,0 +1,52 @@
+ <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Date</th>
+                      <th>Order ID </th>
+                      <th>Amount</th>
+                      <th>Status</th>
+                      <th>Change Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{#each allOrders}}
+                    <tr>
+                      <td>{{inc @index}}</td>
+                      <td>{{this.date}}</td>
+                      <td>{{this._id}}</td>
+                      <td>{{this.totalAmount}}</td>
+                      <td>{{this.status}}</td>
+                      <form action="/admin/change_status/{{this._id}}" method="post" >
+                        <td>
+                          <select class="select2 form-select shadow-none" name="status"
+                            style="width: 100%; height: 36px">
+
+
+                            <option hidden selected value="{{this.status}}">{{this.status}}</option>
+
+                            <option name="status">Pending</option>
+                            <option name="status">cancel</option>
+                            <option name="status">placed</option>
+                            <option name="status">Shipped</option>
+
+
+
+
+
+
+
+                          </select>
+
+
+                        </td>
+                        <td>
+                          <button class="btn btn-info" type="submit">Update</button>
+
+
+                        </td>
+                      </form>
+
+                    </tr>
+
+                    {{/each}}
+                  </tbody>

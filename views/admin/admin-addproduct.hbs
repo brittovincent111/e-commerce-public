@@ -1,0 +1,256 @@
+
+
+<!-- partial -->
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-title"> Add Banner</h3>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    {{!-- <li class="breadcrumb-item"><a href="#">Forms</a></li> --}}
+                    {{!-- <li class="breadcrumb-item active" aria-current="page">Form elements</li> --}}
+                </ol>
+            </nav>
+        </div>
+        <div class="row">
+
+            <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Add Banner</h4>
+                        {{!-- <p class="card-description"> Basic form elements </p> --}}
+                        {{!-- <form class="forms-sample">
+                            <div class="form-group">
+                                <label for="exampleInputName1">Name</label>
+                                <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail3">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword4">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword4"
+                                    placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleSelectGender">Gender</label>
+                                <select class="form-control" id="exampleSelectGender">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>File upload</label>
+                                <input type="file" name="img[]" class="file-upload-default">
+                                <div class="input-group col-xs-12">
+                                    <input type="text" class="form-control file-upload-info" disabled
+                                        placeholder="Upload Image">
+                                    <span class="input-group-append">
+                                        <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputCity1">City</label>
+                                <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleTextarea1">Textarea</label>
+                                <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                            <button class="btn btn-dark">Cancel</button>
+                        </form> --}}
+                        <form class="form-horizontal" method="post" action="/admin/add_product"
+                            enctype="multipart/form-data">
+                            <div class="card-body text-white">
+                                <h4 class="card-title">Add Product</h4>
+                                <div class="form-group row">
+                                    <label for="fname" name="productid"
+                                        class="col-sm-3 text-end control-label col-form-label">Product Id
+                                    </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="productid" class="form-control" id="fname"
+                                            placeholder="Product Id" required/>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="lname" name="productname"
+                                        class="col-sm-3 text-end control-label col-form-label">Product Name
+                                    </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="productname" class="form-control" id="lname"
+                                            placeholder="Product Name" required/>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="lname" name="price"
+                                        class="col-sm-3 text-end control-label col-form-label">Price
+                                    </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="price" class="form-control" id="lname"
+                                            placeholder="Price" required/>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 mt-3 text-end control-label col-form-label"
+                                        name="category">Category</label>
+                                    <div class="col-md-9">
+                                        <select class="select2 form-select shadow-none" name="category"
+                                            style="width: 100%; height: 36px">
+                                            {{#each data}}
+
+
+                                            <option name="category" value="{{this._id}}">{{this.category}}</option>
+
+
+                                            {{/each}}
+
+
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                                {{!-- <div class="form-group row">
+                                    <label class="col-md-3 mt-3 text-end control-label col-form-label">Sub
+                                        Category</label>
+                                    <div class="col-md-9">
+                                        <select class="select2 form-select shadow-none"
+                                            style="width: 100%; height: 36px">
+
+
+                                            {{#each data}}
+                                            {{#each bookings}}
+                                            <option value={{this_id}}> {{this.subcategory}}</option>
+                                            {{/each}}
+                                            {{/each}}
+
+                                        </select>
+                                    </div>
+                                </div> --}}
+
+                                {{!-- <div class="form-group row">
+                                    <label class="col-md-3 text-end control-label col-form-label" id="image"
+                                        name="image">File Upload</label>
+                                    <div class="col-md-9">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" name="image" id="image"
+                                                onchange="viewImage(event)" required multiple />
+
+                                            <div class="invalid-feedback">
+                                                Example invalid custom file feedback
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> --}}
+                                <div class="form-group">
+                                   <label>File upload</label>
+                                    <input type="file" name="image" class="file-upload-default" onchange="viewImage(event)" multiple>
+                                    <div class="input-group col-md-9 col-xs-12" style="padding-left:230px;">
+                                        <input type="text" class="form-control file-upload-info" disabled onchange="viewImage(event)"
+                                            placeholder="Upload Image" onchange="viewImage(event)" multiple>
+                                        <span class="input-group-append" >
+                                            <button class="file-upload-browse btn btn-primary"
+                                                type="button" onchange="viewImage(event)"  onclick="imagee()">Upload</button>
+                                        </span>
+                                    </div>
+                                
+                                </div>
+                                <div class="Image-upload" style="padding-left: 300px; padding-bottom :20px;">
+                                            <img class ="h-12" src="" alt="" style="height:100px; width:auto" id="imgView" hidden>
+                                            <img class ="iimg" src="" alt="" style="height:100px; width:auto" id="imgView1" hidden>
+                                            <img class ="iimg"src="" alt=""  style="height:100px; width:auto" id="imgView2" hidden>
+                                            <img class ="iimg" src="" alt=""  style="height:100px; width:auto" id="imgView3" hidden>
+                                 </div> 
+                                
+                                 <div class="form-group row">
+                                    <label for="lname" name=""
+                                        class="col-sm-3 text-end control-label col-form-label">Description
+                                    </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="descripition"class="form-control" id="lname"
+                                            placeholder="Description" required/>
+                                    </div>
+                                </div>
+
+                                {{!-- <div class="form-group row">
+                                    <label for="cono1" class="col-sm-3 text-end control-label col-form-label"
+                                        name="descripition">Description</label>
+                                    <div class="col-sm-9">
+                                        <textarea class="form-control" name="descripition"></textarea>
+                                    </div>
+                                </div> --}}
+                            </div>
+                            <div class="border-top">
+                                <div class="card-body">
+                                    <button type="submit" class="btn btn-primary">
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- content-wrapper ends -->
+    <!-- partial:../../partials/_footer.html -->
+    <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com
+                2020</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a
+                    href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin
+                    templates</a> from Bootstrapdash.com</span>
+        </div>
+    </footer>
+    <!-- partial -->
+</div>
+<!-- main-panel ends -->
+</div>
+<!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+<!-- plugins:js -->
+<script>
+        function viewImage(event) {
+            document.getElementById('imgView').src = URL.createObjectURL(event.target.files[0])
+            document.getElementById('imgView1').src = URL.createObjectURL(event.target.files[1])
+            document.getElementById('imgView2').src = URL.createObjectURL(event.target.files[2])
+            document.getElementById('imgView3').src = URL.createObjectURL(event.target.files[3])
+           document.getElementById('imgView').hidden = false
+           document.getElementById('imgView1').hidden = false
+           document.getElementById('imgView2').hidden = false
+           document.getElementById('imgView3').hidden = false
+           document.getElementById('imgView4').hidden = false
+
+         
+        }
+    </script>
+   
+<script src="/vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<script src="/vendors/select2/select2.min.js"></script>
+<script src="/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="/js/off-canvas.js"></script>
+<script src="/js/hoverable-collapse.js"></script>
+<script src="/js/misc.js"></script>
+<script src="/js/settings.js"></script>
+<script src="/js/todolist.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page -->
+<script src="/js/file-upload.js"></script>
+<script src="/js/typeahead.js"></script>
+<script src="/js/select2.js"></script>
+<!-- End custom js for this page -->
+ <script src="/js/crop.js"></script>
+</body>
+
+</html>

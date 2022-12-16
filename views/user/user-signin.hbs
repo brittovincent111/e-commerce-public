@@ -1,0 +1,145 @@
+<div class="login-register-area pb-100 pt-75">
+
+    <div class="container">
+        <div class="col-lg-8 col-md-12 offset-lg-2" style="display: flex; justify-content:center;">
+            <a href="/"> <img src="/img/attachment_48345682-removebg-preview (1).png" href="/"></a>
+        </div>
+         <div class="col-lg-8 col-md-12 offset-lg-2" style="display: flex; justify-content:center;">
+                           {{#if loginErr}}
+                <p style="color: red;">Invalid email or password</p>
+
+                {{else}}
+                {{!-- <p style="margin-left :300px;">hghsfgd</p> --}}
+                <p></p>
+                {{/if}}
+                {{#if signErr}}
+                <p style="color: red;">Email or Phone number exists</p>
+
+                {{else}}
+                <p></p>
+                {{/if}}
+                {{#if sigErr}}
+                <p style="color: red;">Referral code dosen't exists</p>
+
+                {{else}}
+                <p></p>
+                {{/if}}
+                
+        </div>
+        <div class="row">
+
+            <div class="col-lg-8 col-md-12 offset-lg-2">
+             
+
+                <div class="login-register-wrapper">
+
+                    <div class="login-register-tab-list nav">
+
+                        <a class="active" data-bs-toggle="tab" href="#lg1">
+                            <h4> login </h4>
+                        </a>
+                        <a data-bs-toggle="tab" href="#lg2">
+                            <h4> register </h4>
+                        </a>
+                    </div>
+                    <div class="tab-content">
+                        <div id="lg1" class="tab-pane active">
+                            <div class="login-form-container">
+                                <div class="login-register-form">
+                                    <form action="/user_signin" method="post">
+                                        <span style="color: red;" id="email-error1"></span>
+                                        <input type="email" name="email" placeholder="email" id="contact-email1"
+                                            onKeyup="validateEmailLogin()">
+
+                                        <span style="color: red;" id="password-error1"></span>
+                                        <input type="password" name="Password" placeholder="password"
+                                            id="contact-password1" onKeyup="validatePasswordLogin()">
+                                        {{!-- <div class="login-toggle-btn">
+                                            <input type="checkbox">
+                                            <label>Remember me</label>
+                                            <a href="#">Forgot Password?</a>
+                                        </div> --}}
+
+                                        <span id="login-error" style="color: red;"></span>
+                                        <div class="button-box btn-hover">
+                                            <button type="submit" onclick="return validateLogin()">Login</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div style="padding-top: 10px;">
+
+                                    <a href="/user-otp-mobile"> Login with OTP</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="lg2" class="tab-pane">
+                            <div class="login-form-container">
+                                <div class="login-register-form">
+                                    <form action="/user_signup" method="post">
+                                        <span id="name-error" style="color: red;"></span>
+                                        <input type="text" name="name" placeholder="Username" id="contact-name"
+                                            onkeyup="validateName()">
+
+                                        <span id="number-error" style="color: red;"></span>
+                                        <input type="number" name="phone" placeholder="Phone Number" id="contact-phone"
+                                            onkeyup="validatePhone()">
+
+                                        {{!-- <span id="number-error"></span> --}}
+                                        <input type="number" name="referralcode" placeholder="Referral code " id=""
+                                            >
+
+                                        <span id="email-error" style="color: red;"></span>
+                                        <input name="email" placeholder="Email" type="email" id="contact-email"
+                                            onKeyup="validateEmail()">
+
+                                        <span id="password-error" style="color: red;"></span>
+                                        <input type="password" name="password" placeholder="Password"
+                                            id="contact-password" onKeyup="validatepassword()">
+
+                                        <span id="cpassword-error" style="color: red;"></span>
+                                        <input type="password" name="cpassword" placeholder="Confirm Password"
+                                            id="contact-cpassword">
+
+                                        <span id="submit-error" style="color: red;"></span>
+                                        <div class="button-box btn-hover">
+                                            <button type="submit" onkeyup="validateConfPassword()"
+                                                onclick="return validateSignup()">Register</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/assets/js/vendor/modernizr-3.11.7.min.js"></script>
+<script src="/assets/js/vendor/jquery-3.6.0.min.js"></script>
+<script src="/assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
+<script src="/assets/js/vendor/popper.min.js"></script>
+<script src="/assets/js/vendor/bootstrap.min.js"></script>
+<script src="/assets/js/plugins/wow.js"></script>
+<script src="/assets/js/plugins/scrollup.js"></script>
+<script src="/assets/js/plugins/aos.js"></script>
+<script src="/assets/js/plugins/magnific-popup.js"></script>
+<script src="/assets/js/plugins/jquery.syotimer.min.js"></script>
+<script src="/assets/js/plugins/swiper.min.js"></script>
+<script src="/assets/js/plugins/imagesloaded.pkgd.min.js"></script>
+<script src="/assets/js/plugins/isotope.pkgd.min.js"></script>
+<script src="/assets/js/plugins/jquery-ui.js"></script>
+<script src="/assets/js/plugins/jquery-ui-touch-punch.js"></script>
+<script src="/assets/js/plugins/jquery.nice-select.min.js"></script>
+<script src="/assets/js/plugins/waypoints.min.js"></script>
+<script src="/assets/js/plugins/counterup.min.js"></script>
+<script src="/assets/js/plugins/select2.min.js"></script>
+<script src="/assets/js/plugins/easyzoom.js"></script>
+<script src="/assets/js/plugins/slinky.min.js"></script>
+<script src="/assets/js/plugins/ajax-mail.js"></script>
+<script src="js/validation.js"></script>
+<!-- Main JS -->
+<script src="/assets/js/main.js"></script>
+</body>
+
+</html>

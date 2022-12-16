@@ -1,0 +1,757 @@
+<div class="main-wrapper main-wrapper-2" style="background-color: rgb(255, 255, 255) ;">
+
+    <!-- mini cart start -->
+    <div class="sidebar-cart-active">
+        <div class="sidebar-cart-all">
+            <a class="cart-close" href="#"><i class="pe-7s-close"></i></a>
+            <div class="cart-content">
+                <h3>Shopping Cart</h3>
+                {{!-- <ul>
+                    <li>
+                        <div class="cart-img">
+                            <a href="#"><img src="assets/images/cart/cart-1.jpg" alt=""></a>
+                        </div>
+                        <div class="cart-title">
+                            <h4><a href="#">Stylish Swing Chair</a></h4>
+                            <span> 1 × $49.00 </span>
+                        </div>
+                        <div class="cart-delete">
+                            <a href="#">×</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cart-img">
+                            <a href="#"><img src="assets/images/cart/cart-2.jpg" alt=""></a>
+                        </div>
+                        <div class="cart-title">
+                            <h4><a href="#">Modern Chairs</a></h4>
+                            <span> 1 × $49.00 </span>
+                        </div>
+                        <div class="cart-delete">
+                            <a href="#">×</a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="cart-total">
+                    <h4>Subtotal: <span>$170.00</span></h4>
+                </div> --}}
+                <div class="cart-btn btn-hover">
+                    <a class="theme-color" href="/user_cart">view cart</a>
+                </div>
+                <div class="checkout-btn btn-hover">
+                    <a class="theme-color" href="checkout.html">checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="breadcrumb-area bg-gray-4 breadcrumb-padding-1" style="background-image:url('/img/photo-1523381210434-271e8be1f52b.jpg'); background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;">456
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <h2>Checkout </h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><i class="ti-angle-right"></i></li>
+                    <li>Checkout </li>
+                </ul>
+            </div>
+        </div>
+        {{!-- <div class="breadcrumb-img-1">
+            <img src="assets/images/banner/breadcrumb-1.png" alt="">
+        </div>
+        <div class="breadcrumb-img-2">
+            <img src="assets/images/banner/breadcrumb-2.png" alt="">
+        </div> --}}
+    </div>
+    <div class="checkout-main-area pb-100 pt-100">
+        <div class="container">
+            <div class="customer-zone mb-20">
+                <div class="checkout-wrap pt-30">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="billing-info-wrap">
+                                <h3>Billing Details</h3>
+
+
+                                <div class="checkout-account mt-25">
+                                    <input class="checkout-toggle" type="checkbox">
+                                    <span>Add Address</span>
+                                </div>
+                                <div class="different-address open-toggle mt-30">
+                                    <div class="row">
+                                        <form action="/add-address" method="post"
+                                            style="background-color: rgb(255, 255, 255) ;">
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="billing-info mb-20">
+                                                    <label>First Name</label>
+                                                    <input type="text" name="firstname">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="billing-info mb-20">
+                                                    <label>Last Name</label>
+                                                    <input type="text" name="lastname">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="billing-info mb-20">
+                                                    <label>Country</label>
+                                                    <input type="text" name="country">
+                                                </div>
+                                            </div>
+                                            {{!-- <div class="col-lg-12">
+                                                <div class="billing-info mb-20">
+                                                    <label>Company Name</label>
+                                                    <input type="text">
+                                                </div>
+                                            </div> --}}
+                                            {{!-- <div class="col-lg-12">
+                                                <div class="billing-select select-style mb-20">
+                                                    <label>Country</label>
+                                                    <select class="select-two-active">
+                                                        <option>Select a country</option>
+                                                        <option>Azerbaijan</option>
+                                                        <option>Bahamas</option>
+                                                        <option>Bahrain</option>
+                                                        <option>Bangladesh</option>
+                                                        <option>Barbados</option>
+                                                    </select>
+                                                </div>
+                                            </div> --}}
+                                            <div class="col-lg-12">
+                                                <div class="billing-info mb-20">
+                                                    <label>Street Address</label>
+                                                    <input class="billing-address" name="add1"
+                                                        placeholder="House number and street name" type="text">
+                                                    <input name="add2" placeholder="Apartment, suite, unit etc."
+                                                        type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="billing-info mb-20">
+                                                    <label>City</label>
+                                                    <input type="text" name="city">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="billing-info mb-20">
+                                                    <label>State / County</label>
+                                                    <input type="text" name="states">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="billing-info mb-20">
+                                                    <label>Postcode / ZIP</label>
+                                                    <input type="text" name="pincode">
+                                                </div>
+                                            </div>
+                                            {{!-- <div class="col-lg-6 col-md-6">
+                                                <div class="billing-info mb-20">
+                                                    <label>Phone</label>
+                                                    <input type="text">
+                                                </div>
+                                            </div> --}}
+                                            {{!-- <div class="col-lg-6 col-md-6">
+                                                <div class="billing-info mb-20">
+                                                    <label>Email Address</label>
+                                                    <input type="text">
+                                                </div>
+
+                                            </div> --}}
+                                            <div class="Place-order btn-hover">
+                                                <button type="submit" class="btn btn-dark">Add Address</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <form action="" method="post" id="check-out">
+                    <div class="checkout-wrap pt-30 ">
+                        <div class="mb-3">Select Address</div>
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <input type="text" name="userId" value="{{userId}}" hidden>
+                                {{#each address}}
+                                <div class="form-check">
+
+
+
+                                    <div class="card border border-dark mb-3">
+
+
+                                        <div class="card-header "><input class="form-check-input mx-1 color-dark"
+                                                type="radio" name="address" value="{{this._id}}" id="flexRadioDefault1"
+                                                required checked>{{this.address.firstname}}
+                                            {{this.address.lastname}}
+                                        </div>
+                                        <div class="card-body text-dark">
+
+                                            <p class="card-text">{{this.address.add1}} {{this.address.add2}}</p>
+                                            <p class="card-text">{{this.address.city}} {{this.address.states}}</p>
+                                            <p class="card-text">{{this.address.country}} {{this.address.pincode}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{/each}}
+
+                            </div>
+
+                            <div class="col-lg-5">
+                                <div class="" style="padding: 20px;border-style:groove;">
+                                    <div class="col-lg-12 col-md-12col-12">
+                                        <div class="cart-calculate-discount-wrap mb-40">
+                                            <h4>Coupon Discount </h4>
+
+                                            {{!-- error --}}
+                                            <p id="error" value="" style="color:red;"></p>
+
+
+                                            <div class="calculate-discount-content">
+                                                <p>Enter your coupon code if you have one.</p>
+
+                                                <div class="input-style">
+                                                    <input type="text" id="couponName" placeholder="Coupon code"
+                                                        name="couponcode">
+                                                </div>
+                                                <div class="calculate-discount-btn btn-hover">
+                                                    <a class="btn theme-color" id="applybutton"
+                                                        onclick="applyCoupon(event)" style="border-style:solid;">Apply
+                                                        Coupon </a>
+                                                    <button class="btn theme-color" id="deletebutton"
+                                                        onclick="removeCoupon(event)" hidden="true">Remove
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12col-12">
+                                        <div class="cart-calculate-discount-wrap mb-40">
+                                            <h4>wallet Amount <span style="padding-left: 150px; "
+                                                    id="wallet">{{userData.wallet}}</span>
+                                            </h4>
+
+
+
+
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="walletamount"
+                                                    id="flexRadioDefault1" onclick="valueCheck()" value="now">
+                                                <label class="form-check-label" for="flexRadioDefault1">
+                                                    Use Wallet
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="walletamount"
+                                                    id="flexRadioDefault2" value="later" onclick="valueback()" checked>
+                                                <label class="form-check-label" for="flexRadioDefault2">
+                                                    Use Later
+                                                </label>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="your-order-area">
+
+                                        <h3>Your order</h3>
+                                        <div class="your-order-wrap gray-bg-4">
+                                            <div class="your-order-info-wrap">
+                                                <div class="your-order-info">
+                                                    <ul>
+                                                        <li>Product <span>Total</span></li>
+                                                    </ul>
+                                                </div>
+                                                {{!-- <div class="your-order-middle">
+                                                    <ul>
+                                                        <li>Product Name X 1 <span>$329 </span></li>
+                                                        <li>Product Name X 1 <span>$329 </span></li>
+                                                    </ul>
+                                                </div> --}}
+                                                <div class="your-order-info order-subtotal">
+                                                    <ul>
+                                                        <li>Amount <span>{{totalAmount}}</span></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="your-order-info order-subtotal">
+                                                    <ul>
+                                                        <li>Discount Percentage <span id="discountPer">0</span></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="your-order-info order-subtotal">
+                                                    <ul>
+                                                        <li>Discount Amount <span id="discountAmount">0<span></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="your-order-info order-subtotal">
+                                                    <ul>
+                                                        <li>Wallet Amount <span id="wa">0<span></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="your-order-info order-total">
+                                                    <ul>
+                                                        <li>Total <span id="totalAmount">{{totalAmount}}</span><span
+                                                                id="TotalAmount" hidden>{{totalAmount}}</span></li><span
+                                                            id="TotalAmo" hidden>{{totalAmount}}</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="payment-method" id="paymentmethod">
+
+                                                <div class="pay-top sin-payment">
+                                                    <input id="payment-method-2" class="input-radio" type="radio"
+                                                        value="razorpay" name="payment_method" checked>
+                                                    <label for="payment-method-2">Razorpay payments</label>
+                                                    <div class="payment-box payment_method_bacs">
+                                                        <p>Make your payment directly into our bank account. Please use
+                                                            your
+                                                            Order ID as the payment reference.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="pay-top sin-payment" id="payment-method-3">
+                                                    <input class="input-radio" type="radio" value="cod"
+                                                        name="payment_method">
+                                                    <label for="payment-method-3">Cash on delivery </label>
+                                                    <div class="payment-box payment_method_bacs">
+                                                        <p>Make your payment directly on delivery. Please use your
+                                                            Order ID as the payment reference.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="pay-top sin-payment sin-payment-3">
+                                                    <input id="payment-method-4" class="input-radio" type="radio"
+                                                        value="paypal" name="payment_method">
+                                                    <label for="payment-method-4">PayPal </label>
+                                                    <div class="payment-box payment_method_bacs">
+                                                        <p>Make your payment directly into our bank account. Please use
+                                                            your
+                                                            Order ID as the payment reference.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Place-order btn-hover">
+                                            <button type="submit" class="btn btn-dark">Place Order</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{>user-footer}}
+    <!-- Mobile Menu start -->
+    <div class="off-canvas-active">
+        <a class="off-canvas-close"><i class=" ti-close "></i></a>
+        <div class="off-canvas-wrap">
+            <div class="welcome-text off-canvas-margin-padding">
+                <p>Default Welcome Msg! </p>
+            </div>
+            <div class="mobile-menu-wrap off-canvas-margin-padding-2">
+                <div id="mobile-menu" class="slinky-mobile-menu text-left">
+                    <ul>
+                        <li><a href="/">HOME</a></li>
+                        <li><a href="/view_products">PRODUCTS</a></li>
+                        <li><a href="about-us.html">ABOUT</a></li>
+                        <li><a href="contact-us.html">CONTACT US</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="language-currency-wrap language-currency-wrap-modify">
+                <div class="currency-wrap border-style">
+                    <a class="currency-active" href="#">$ Dollar (US) <i class=" ti-angle-down "></i></a>
+                    <div class="currency-dropdown">
+                        <ul>
+                            <li><a href="#">Taka (BDT) </a></li>
+                            <li><a href="#">Riyal (SAR) </a></li>
+                            <li><a href="#">Rupee (INR) </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="language-wrap">
+                    <a class="language-active" href="#"><img src="assets/images/icon-img/flag.png" alt=""> English
+                        <i class=" ti-angle-down "></i></a>
+                    <div class="language-dropdown">
+                        <ul>
+                            <li><a href="#"><img src="assets/images/icon-img/flag.png" alt="">English </a></li>
+                            <li><a href="#"><img src="assets/images/icon-img/spanish.png" alt="">Spanish</a></li>
+                            <li><a href="#"><img src="assets/images/icon-img/arabic.png" alt="">Arabic </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- All JS is here -->
+<script>
+    function valueCheck() {
+
+        let amount = parseInt( document.getElementById("TotalAmo").innerHTML)
+        let wallet = parseInt( document.getElementById("wallet").innerHTML)
+        document.getElementById("payment-method-3").hidden = true
+
+
+        if (amount > wallet) {
+            let amount = document.getElementById("totalAmount").innerHTML
+            document.getElementById("wa").innerHTML = wallet
+            let totalAmount = parseInt(amount) - parseInt(wallet)
+            document.getElementById("TotalAmount").hidden = false
+            document.getElementById("totalAmount").hidden = true
+            document.getElementById("TotalAmount").innerHTML = totalAmount
+            console.log(totalAmount)
+
+        } else {
+            let totalAmo = "0"
+            let dis = document.getElementById("discountAmount").innerHTML
+            let amount = document.getElementById("TotalAmo").innerHTML
+            let wall = parseInt(amount)
+            document.getElementById("wa").innerHTML = wall
+            document.getElementById("TotalAmount").hidden = true
+            document.getElementById("totalAmount").hidden = false
+            document.getElementById("totalAmount").innerHTML = totalAmo
+
+
+
+        }
+
+        $.ajax({
+            url: "/check-wallet-amount",
+
+            data: {
+
+                amount: amount
+            },
+            method: 'post',
+            success: (response) => {
+                document.getElementById("paymentmethod").hidden = true
+
+
+
+            }
+
+
+        })
+
+
+    }
+
+
+</script>
+<script>
+
+    function valueback() {
+        console.log("call")
+        let wallet = '0'
+        let amount = document.getElementById("TotalAmo").innerHTML
+        let dis = document.getElementById("discountAmount").innerHTML
+        wallet = document.getElementById("wallet").innerHTML
+       
+            document.getElementById("TotalAmount").innerHTML = amount
+            document.getElementById("wa").innerHTML = "0"
+            document.getElementById("TotalAmount").hidden = false
+            document.getElementById("totalAmount").hidden = true
+            document.getElementById("paymentmethod").hidden = false
+            document.getElementById("payment-method-3").hidden = false
+
+
+        
+
+    }
+</script>
+<script>
+
+    function applyCoupon(event) {
+        event.preventDefault();
+
+        let coupon = document.getElementById('couponName').value
+
+        console.log(coupon)
+        $.ajax({
+            url: '/apply-coupon',
+            data: {
+                coupon,
+
+            },
+            method: 'post',
+            success: (response) => {
+                if (response.couponUsed) {
+
+                    document.getElementById("error").innerHTML = "Coupon Already Used "
+                } else if (response.checkCoupon) {
+
+
+                    document.getElementById("error").innerHTML = "Coupon Dosen't Exist "
+
+                } else if (response.couponDate) {
+
+                    document.getElementById("error").innerHTML = "Coupon Date Expired "
+                } else if (response.states) {
+
+                    document.getElementById("error").innerHTML = "Coupon Applied"
+                    document.getElementById("discountPer").innerHTML = response.cartClear.couponDet.couponper
+                    document.getElementById("discountAmount").innerHTML = response.discountAmount
+                    document.getElementById("TotalAmount").innerHTML = response.totalAmount
+                    document.getElementById("totalAmount").innerHTML = response.totalAmount
+                    document.getElementById("TotalAmo").innerHTML = response.totalAmount
+                    document.getElementById("applybutton").hidden = true
+                    document.getElementById("deletebutton").hidden = false
+                } else if (response.unstates) {
+
+                    document.getElementById("error").innerHTML = "Coupon cannot apply for lesser limit "
+                }
+            }
+        })
+
+    }
+
+
+    function removeCoupon(event) {
+        event.preventDefault();
+
+        let coupon = document.getElementById('couponName').value
+
+        console.log(coupon, "hvhv")
+        $.ajax({
+            url: '/remove-coupon',
+            data: {
+                coupon
+
+            },
+            method: 'post',
+            success: ((response) => {
+                swal({
+                    title: "Good job!",
+                    text: "You clicked the button!",
+                    icon: "success",
+                    button: "Aww yiss!",
+                }).then(() => {
+                    document.getElementById("discountPer").innerHTML = "0"
+                    document.getElementById("discountAmount").innerHTML = "0"
+                    document.getElementById('couponName').value = ""
+                    document.getElementById("applybutton").hidden = false
+                    document.getElementById("deletebutton").hidden = true
+                    document.getElementById("error").innerHTML = "Coupon Removed"
+                    document.getElementById("totalAmount").innerHTML = response.totalAmount
+                    document.getElementById("TotalAmount").innerHTML = response.totalAmount
+                    document.getElementById("TotalAmo").innerHTML = response.totalAmount
+
+                })
+
+            })
+        })
+
+    }
+
+</script>
+
+<script>
+    $("#check-out").submit((e) => {
+        e.preventDefault()
+        console.log("ajax  working")
+        $.ajax({
+            url: '/place-order',
+            method: 'post',
+            data: $("#check-out").serialize(),
+            success: (response) => {
+                alert("hff")
+                if (response.cod) {
+
+                    swal({
+                        title: "Congrats",
+                        text: "Your order is placed",
+                        icon: "success",
+                        button: "order",
+                    }).then(() => {
+
+                        location.href = '/order-success'
+                    })
+                } else if (response.razorpay) {
+                    console.log("razorpay response")
+
+                    razorpayPayment(response)
+
+
+
+                    function razorpayPayment(order) {
+                        var options = {
+                            "key": "rzp_test_RPQiGFYTXlNb6N", // Enter the Key ID generated from the Dashboard
+                            "amount": order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                            "currency": "INR",
+                            "name": "Helgary",
+                            "description": "Test Transaction",
+                            "image": "https://example.com/your_logo",
+                            "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                            "handler": function (response) {
+
+                                verifyPayment(response, order)
+                            },
+                            "prefill": {
+                                "name": "Gaurav Kumar",
+                                "email": "gaurav.kumar@example.com",
+                                "contact": "9999999999"
+                            },
+                            "notes": {
+                                "address": "Razorpay Corporate Office"
+                            },
+                            "theme": {
+                                "color": "#3399cc"
+                            }
+                        };
+
+
+
+                        var rzp1 = new Razorpay(options);
+                        rzp1.open()
+                    }
+
+
+
+                    function verifyPayment(payment, order) {
+                        $.ajax({
+                            url: '/verify-payment',
+                            data: {
+                                payment,
+                                order
+                            },
+                            method: 'post',
+                            success: (response) => {
+                                swal({
+                                    title: "Order Placed",
+                                    text: "Redirecting...",
+                                    icon: "Payment success",
+                                    buttons: false,
+                                });
+                                location.href = '/order-success'
+                            }
+                        })
+                    }
+
+                }
+
+                else if (response.payPal) {
+                    console.log('paypal reieved')
+                    for (let i = 0; i < response.links.length; i++) {
+
+                        if (response.links[i].rel === "approval_url") {
+
+                            location.href = response.links[i].href;
+
+                        }
+
+
+                    }
+
+                    // location.href='/ordersuccess'
+
+                } else if (response.wallet) {
+                    swal({
+                        title: "Congrats",
+                        text: "Your order is placed",
+                        icon: "success",
+                        button: "order",
+                    }).then(() => {
+
+                        location.href = '/order-success'
+                    })
+
+
+
+                }
+
+            }
+        })
+    })
+
+
+
+
+    let name = document.getElementById("name_id").value
+    let companyname = document.getElementById("company_id").value
+    var address_line_1 = document.getElementById("add_line_1_id").value
+    var address_line_2 = document.getElementById("add_line_2_id").value
+    var country = document.getElementById("country_id").value
+    var state = document.getElementById("state_id").value
+    var city = document.getElementById("city_id").value
+    var zipcode = document.getElementById("zipcode_id").value
+
+    function handleChange(src) {
+        console.log(name)
+        radio_value = src.value;
+        if (radio_value == 1) {
+            //default saved home address
+            document.getElementById("name_id").value = name;
+            document.getElementById("company_id").value = companyname;
+            document.getElementById("add_line_1_id").value = address_line_1;
+            document.getElementById("add_line_2_id").value = address_line_2;
+            document.getElementById("country_id").value = country;
+            document.getElementById("state_id").value = state;
+            document.getElementById("city_id").value = city;
+            document.getElementById("zipcode_id").value = zipcode;
+        }
+        else {
+            document.getElementById("name_id").value = ""
+            document.getElementById("company_id").value = ""
+            document.getElementById("add_line_1_id").value = ""
+            document.getElementById("add_line_2_id").value = ""
+            document.getElementById("country_id").value = ""
+            document.getElementById("state_id").value = ""
+            document.getElementById("city_id").value = ""
+            document.getElementById("zipcode_id").value = ""
+
+
+
+        }
+
+    }
+
+</script>
+
+
+<script src="/assets/js/vendor/modernizr-3.11.7.min.js"></script>
+<script src="/assets/js/vendor/jquery-3.6.0.min.js"></script>
+<script src="/assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
+<script src="/assets/js/vendor/popper.min.js"></script>
+<script src="/assets/js/vendor/bootstrap.min.js"></script>
+<script src="/assets/js/plugins/wow.js"></script>
+<script src="/assets/js/plugins/scrollup.js"></script>
+<script src="/assets/js/plugins/aos.js"></script>
+<script src="/assets/js/plugins/magnific-popup.js"></script>
+<script src="/assets/js/plugins/jquery.syotimer.min.js"></script>
+<script src="/assets/js/plugins/swiper.min.js"></script>
+<script src="/assets/js/plugins/imagesloaded.pkgd.min.js"></script>
+<script src="/assets/js/plugins/isotope.pkgd.min.js"></script>
+<script src="/assets/js/plugins/jquery-ui.js"></script>
+<script src="/assets/js/plugins/jquery-ui-touch-punch.js"></script>
+<script src="/assets/js/plugins/jquery.nice-select.min.js"></script>
+<script src="/assets/js/plugins/waypoints.min.js"></script>
+<script src="/assets/js/plugins/counterup.min.js"></script>
+<script src="/assets/js/plugins/select2.min.js"></script>
+<script src="/assets/js/plugins/easyzoom.js"></script>
+<script src="/assets/js/plugins/slinky.min.js"></script>
+<script src="/assets/js/plugins/ajax-mail.js"></script>
+<script src="js/validation.js"></script>
+<!-- Main JS -->
+<script src="/assets/js/main.js"></script>
+
+
+
+
+</body>
+
+</html>
